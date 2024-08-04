@@ -1,99 +1,146 @@
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>샤르니카 방송에서 사용하는 이모티콘 목록</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre-exp.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre-icons.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre.min.css" />
-	<style>
-	<!--
-	.width100 { width: 100%; }
-	#search:focus { z-index: auto; }
-
-	@media only screen and (min-width: 1280px) {
-		.container { max-width: 1280px; }
-	}
-
-	body {
-		padding-top: 32px;
-		padding-bottom: 32px;
-		background: #454d5d;
-	}
-
-	.card { border-width: 0px; }
-
-	.chip {
-		margin-right: 8px;
-		margin-bottom: 8px;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-khtml-user-select: none;
-		-ms-user-select: none;
-	}
-
-	.tag-selected {
-		color: #fff;
-		background: #5764c6;
-	}
-
-	.dccon {
-		cursor: pointer;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-khtml-user-select: none;
-		-ms-user-select: none;
-	}
-
-	.dccon>.card>.card-body {
-		height: 70px;
-	}
-
-	#search_clear {
-		cursor: pointer;
-	}
-
-	.toast-container {
-		position: fixed;
-		bottom: 0px;
-		right: 0px;
-		padding: 16px;
-		z-index: 400;
-	}
-
-	.toast {
-		margin-top: 8px;
-	}
-
-	.menu {
-		max-height: 360px;
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
-
-	.dccon.tooltip::after {
-		width: 100%;
-		margin-left: 9px;
-		margin-right: 9px;
-		height: 72px;
-		padding: 12px;
-		padding-right: 28px;
-		white-space: pre-line;
-		border-top-left-radius: 0px;
-		border-top-right-radius: 0px;
-	}
-
-	.dccon.tooltip.tooltip-bottom:focus::after,
-		.tooltip.tooltip-bottom:hover::after {
-		opacity: 1;
-		-webkit-transform: translate(-50%, -81px);
-		-ms-transform: translate(-50%, -81px);
-		transform: translate(-50%, -81px);
-	}
-	-->
-	</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0" />
+  <title>디시콘 선택기</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3/dist/css/bootstrap.min.css">
+<style> 
+    body{ 
+      background-color: #333; 
+      max-width: 1280px;
+      margin: 0 auto;
+    } 
+    @media screen and (max-width: 600px) {  
+      div.img { 
+        margin: 0.9%; 
+        border: 1px solid rgba(255,255,255,0);  
+        float: left;  
+        width: 18%; 
+        backface-visibility: visible !important;  
+        animation: bounceIn 1.2s; 
+        transition: .2s;  
+        z-index: 1; 
+      } 
+    } 
+    @media screen and (min-width: 601px) {  
+      div.img { 
+        margin: 5px;  
+        border: 1px solid rgba(255,255,255,0);  
+        float: left;  
+        width: 100px; 
+        height: 100px;  
+        backface-visibility: visible !important;  
+        animation: bounceIn 1.2s; 
+        transition: .2s;  
+        z-index: 1; 
+      } 
+      .fz4{margin:0!important;}
+    } 
+    div.img:hover { 
+      border: 1px solid #fff; 
+      box-shadow: 0px 0px 25px 1px #fff, inset 0px 0px 25px 1px #fff;   
+    } 
+    @keyframes bounceIn { 
+      from, 20%, 40%, 60%, 80%, to {z-index: -5; animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);}  
+      0% {transform: scale3d(.3, .3, .3); opacity: 0;}  
+      20% {transform: scale3d(1.1, 1.1, 1.1);}  
+      40% {transform: scale3d(.9, .9, .9);} 
+      60% {transform: scale3d(1.03, 1.03, 1.03); opacity: .9; } 
+      80% {transform: scale3d(.97, .97, .97);}  
+      to {transform: scale3d(1, 1, 1); opacity: 1;} 
+    } 
+    div.img img { 
+      width: 100%;  
+      height: auto; 
+    } 
+    div.desc, div.tag {  
+      display: none;  
+    } 
+    input,.input-group {  
+      width: 100%;  
+    } 
+    div.headerBox{  
+      position: fixed;  
+      top: 0; 
+      left: 0;  
+      right: 0; 
+      width: 100%;  
+      height: 94px; 
+      background-color:#333;  
+      background-repeat: repeat;  
+      box-shadow: 0 0px 20px 20px #333; 
+    } 
+    div.header {  
+      padding: 0px 0px 0px 3px; 
+      max-width: 400px; 
+      margin: 8px auto;  
+      background-color: #333; 
+      animation: fdon 4s; 
+      animation-fill-mode: forwards;
+    } 
+    .emoticon { 
+      margin-top: 105px; 
+      margin-bottom: 20px;  
+      margin-left: 10px;  
+      height: auto; 
+      z-index: 999; 
+    } 
+    .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group{ 
+      width: 63px;  
+    } 
+    .col-lg-6l, .col-lg-6r{ 
+      width: 50%; 
+      padding: 5px; 
+      float: left;  
+    } 
+    .fz4{
+      padding: 5px;
+      margin-top: 42px;
+    }
+    .fzicon{
+      width: 17px;
+      height: 20px;
+    }
+    @keyframes fdon {  
+      from {  
+        visibility: visible;  
+        opacity: 0; 
+      } 
+      to {  
+        opacity: 1; 
+      } 
+    } 
+    @keyframes slideInLeft {  
+      from {  
+        -webkit-transform: translate3d(-100%, 0, 0);  
+        transform: translate3d(-100%, 0, 0);  
+        visibility: visible;  
+        opacity: 0; 
+      } 
+      to {  
+        -webkit-transform: translate3d(0, 0, 0);  
+        transform: translate3d(0, 0, 0);  
+        opacity: 1; 
+      } 
+    } 
+    @keyframes slideInRight { 
+      from {  
+        -webkit-transform: translate3d(100%, 0, 0); 
+        transform: translate3d(100%, 0, 0); 
+        visibility: visible;  
+        opacity: 0; 
+      } 
+      to {  
+        -webkit-transform: translate3d(0, 0, 0);  
+        transform: translate3d(0, 0, 0);  
+        opacity: 1; 
+      } 
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/handlebars@4/dist/handlebars.min.js,npm/jquery.quicksearch@2,npm/jquery-lazyload@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
 </head>
 
 <body>
